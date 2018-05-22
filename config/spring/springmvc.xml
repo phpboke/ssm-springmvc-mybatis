@@ -16,9 +16,9 @@
 	<!-- 扫描controller的包 -->
 	<context:component-scan base-package="pers.ken.ssm.controller"></context:component-scan>
 	
-	<!-- 注解驱动 -->
+	<!-- 注解驱动.实际项目中，可以用下面注解驱动映射器和适配器 -->
 	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
-
+	
 	<!-- 视图解析器。解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包-->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -27,5 +27,7 @@
 		<!-- 配置jsp路径的后缀 -->
 		<property name="suffix" value=".jsp"/>
 	</bean>
+	
+	
 
 </beans>

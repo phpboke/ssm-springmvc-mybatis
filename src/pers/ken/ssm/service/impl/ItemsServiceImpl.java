@@ -14,6 +14,7 @@ import pers.ken.ssm.service.ItemsService;
 
 public class ItemsServiceImpl implements ItemsService {
 
+	@Autowired
 	private ItemsMapperCustom itemsMapperCustom;
 
 	@Override
