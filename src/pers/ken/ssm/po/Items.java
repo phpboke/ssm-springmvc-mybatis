@@ -2,6 +2,11 @@ package pers.ken.ssm.po;
 
 import java.util.Date;
 
+/**
+ * @desc 简单po类 Items
+ * @author ken
+ *
+ */
 public class Items {
     private Integer id;
 

@@ -1,7 +1,7 @@
 package pers.ken.ssm.po;
 
 /**
- * @desc items的扩展类
+ * @desc Items的扩展类 ItemsCustom
  * @author ken
  *
  */

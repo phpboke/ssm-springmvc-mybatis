@@ -28,6 +28,17 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	
+		<!-- 自定义参数绑定 -->
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<!-- 转换器 -->
+		<property name="converters">
+			<list>
+				<!-- 日期类型转换 -->
+				<bean class="pers.ken.ssm.controller.converter.CustomDateConverter"/>
+			</list>
+		</property>
+		
 	
+	</bean>
 
 </beans>

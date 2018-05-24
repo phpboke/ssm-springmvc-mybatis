@@ -16,13 +16,36 @@ public class ItemsServiceImpl implements ItemsService {
 
 	@Autowired
 	private ItemsMapperCustom itemsMapperCustom;
+	
+	@Autowired
+	private ItemsMapper itemsMapper;
 
 	@Override
 	public List<ItemsCustom> findItemsList(ItemsQueryVo itemsQueryVo)
 			throws Exception {
 		// 通过 itemsMapperCustom 查询数据库
-		return itemsMapperCustom.findItemsCustoms(itemsQueryVo);
+		return itemsMapperCustom.findItemsList(itemsQueryVo);
 	}
+
 	
+	//根据id查询获取商品的信息
+	@Override
+	public ItemsCustom findItemsById(Integer id) throws Exception {
+		//调用po自动生成的mapper方法
+		Items items = itemsMapper.selectByPrimaryKey(id);
+		//返回一个ItemsCustom的扩展对象
+		ItemsCustom itemsCustom = new ItemsCustom();
+		//复制对象属性
+		BeanUtils.copyProperties(items, itemsCustom);
+		
+		return itemsCustom;
+	}
+
+	//通过id更新商品信息
+	@Override
+	public void updateItems(Integer id, ItemsCustom itemsCustom) throws Exception {
+		itemsCustom.setId(id);
+		itemsMapper.updateByPrimaryKeyWithBLOBs(itemsCustom);
+	}
 	
 }

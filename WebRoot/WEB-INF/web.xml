@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>ssm-springmvc-mybatis</display-name>
+  <display-name>springmvc</display-name>
   
   <!-- 加载spring容器 -->
   <context-param>
@@ -13,13 +13,13 @@
   
   <!-- 配置springmvc前端控制器 -->
   <servlet>
-  	<servlet-name>ssm-springmvc-mybatis</servlet-name>
+  	<servlet-name>springmvc</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
   	
   	<!-- 通过 contextConfigLocation 配置处理器映射器、适配器-->
   	<init-param>
   		<param-name>contextConfigLocation</param-name>
-  		<param-value>classpath:springmvc.xml</param-value>
+  		<param-value>classpath:spring/springmvc.xml</param-value>
   	</init-param>
   </servlet>
   
@@ -29,7 +29,20 @@
   	<url-pattern>*.action</url-pattern>
   </servlet-mapping>
   
-  
+  	<!-- post乱码过虑器 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

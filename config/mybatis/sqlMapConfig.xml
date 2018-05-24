@@ -5,9 +5,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 <configuration>
 
-<!-- 配置别名（扫描包） -->
-<typeAliases>
-	<package name="pers.ken.ssm.po"/>
-</typeAliases>
+	<!-- 配置别名（扫描包） -->
+	<typeAliases>
+		<package name="pers.ken.ssm.po"/>
+	</typeAliases>
 
 </configuration>

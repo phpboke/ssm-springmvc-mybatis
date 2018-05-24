@@ -2,11 +2,13 @@ package pers.ken.ssm.mapper;
 
 import pers.ken.ssm.po.Items;
 import pers.ken.ssm.po.ItemsExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ItemsMapper {
-    int countByExample(ItemsExample example);
+	int countByExample(ItemsExample example);
 
     int deleteByExample(ItemsExample example);
 
