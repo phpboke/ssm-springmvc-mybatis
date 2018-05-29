@@ -35,4 +35,5 @@ public interface ItemsMapper {
     int updateByPrimaryKeyWithBLOBs(Items record);
 
     int updateByPrimaryKey(Items record);
+
 }

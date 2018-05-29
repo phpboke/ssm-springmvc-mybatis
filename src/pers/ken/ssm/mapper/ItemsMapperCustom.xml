@@ -5,10 +5,11 @@
 <!-- 动态条件sql where条件 -->
 <sql id="query_items_where">
 	<if test="itemsCustom != null">
-		<if test="itemsCustom.name != null AND itemsCustome.name != ''">
-			items.name LIKE "%${itemsCustom.name}"
+		<if test="itemsCustom.name != null and itemsCustom.name != ''">
+			items.name LIKE '%${itemsCustom.name}%'
 		</if>
 	</if>
+   		
 </sql>
 
 <!-- 查询商品列表 -->
@@ -18,5 +19,9 @@
 		<include refid="query_items_where"></include>
 	</where>
 </select>
+
+<delete id="deleteItems">
+	delete from items where id in (7)
+</delete>
 
 </mapper>

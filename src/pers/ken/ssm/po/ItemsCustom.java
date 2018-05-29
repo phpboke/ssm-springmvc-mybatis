@@ -1,5 +1,12 @@
 package pers.ken.ssm.po;
 
+import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import pers.ken.ssm.controller.validation.ValidGroup1;
+
 /**
  * @desc Items的扩展类 ItemsCustom
  * @author ken

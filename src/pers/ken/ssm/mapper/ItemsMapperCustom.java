@@ -6,6 +6,7 @@ import pers.ken.ssm.po.ItemsExample;
 import pers.ken.ssm.po.ItemsQueryVo;
 
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ItemsMapperCustom {
@@ -18,4 +19,7 @@ public interface ItemsMapperCustom {
 	
 	//根据id更新商品信息
 	public void updateItems(Integer id, ItemsCustom itemsCustom) throws Exception;
+	
+	//删除商品
+	public void deleteItems(Integer[] id);
 }

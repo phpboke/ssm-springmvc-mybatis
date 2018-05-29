@@ -2,6 +2,12 @@ package pers.ken.ssm.po;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import pers.ken.ssm.controller.validation.ValidGroup1;
+import pers.ken.ssm.controller.validation.ValidGroup2;
+
 /**
  * @desc 简单po类 Items
  * @author ken
@@ -10,14 +16,19 @@ import java.util.Date;
 public class Items {
     private Integer id;
 
+    //长度检验
+    @Size(min=1, max=30, message="{items.name.length.error}", groups={ValidGroup1.class})
     private String name;
 
     private Float price;
 
     private String pic;
 
+    //非空校验
+    @NotNull(message="{items.createtime.isNUll}", groups={ValidGroup2.class})
     private Date createtime;
 
+    @Size(min=1, max=100, message="{items.detail.length.error}", groups={ValidGroup1.class})
     private String detail;
 
     public Integer getId() {

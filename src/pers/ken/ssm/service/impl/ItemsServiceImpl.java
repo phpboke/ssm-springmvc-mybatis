@@ -47,5 +47,12 @@ public class ItemsServiceImpl implements ItemsService {
 		itemsCustom.setId(id);
 		itemsMapper.updateByPrimaryKeyWithBLOBs(itemsCustom);
 	}
+
+	//根据商品id批量删除商品
+	@Override
+	public void deleteItems(Integer[] id) throws Exception {
+		// TODO Auto-generated method stub
+		itemsMapperCustom.deleteItems(id);
+	}
 	
 }
