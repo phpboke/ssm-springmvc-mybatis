@@ -68,7 +68,7 @@
 		<property name="cacheSeconds" value="120" />
 	</bean>
 	
-		<!-- 文件上传 -->
+	<!-- 文件上传 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 设置上传文件的最大尺寸为5MB -->
@@ -76,5 +76,24 @@
 			<value>5242880</value>
 		</property>
 	</bean>
+	
+<!--拦截器 -->
+<mvc:interceptors>
+	<!--多个拦截器,顺序执行 -->
+	<!-- 登陆认证拦截器 -->
+	<mvc:interceptor>
+		<mvc:mapping path="/**"/>
+		<bean class="pers.ken.ssm.interceptor.LoginInterceptor"></bean>
+	</mvc:interceptor>
+	<mvc:interceptor>
+		<!-- /**表示所有url包括子url路径 -->
+		<mvc:mapping path="/**"/>
+		<bean class="pers.ken.ssm.interceptor.HandlerInterceptor1"></bean>
+	</mvc:interceptor>
+	<mvc:interceptor>
+		<mvc:mapping path="/**"/>
+		<bean class="pers.ken.ssm.interceptor.HandlerInterceptor2"></bean>
+	</mvc:interceptor>
+</mvc:interceptors>
 
 </beans>
